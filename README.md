@@ -7,7 +7,7 @@ This repository is part of the Ministry of Justice's Data Platform Firebreak. Th
 
 ## Getting Started 
 
-This project uses devcontainers for local development. 
+This project uses [devcontainers](https://code.visualstudio.com/docs/devcontainers/containers) for local development. 
 
 To use the devcontainer, follow these steps:
 1. Install Docker on your machine.
