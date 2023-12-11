@@ -7,7 +7,7 @@ PORT=${PORT:"3000"}
 case "$MODE" in
 "run")
   echo "Running Rails server on ${ADDRESS}:${PORT}..."
-    rails server -p ${PORT} -b ${ADDRESS}
+    rails server --port "${PORT}" --binding "${ADDRESS}"
   ;;
 "migrate")
   echo "Running database migrations..."

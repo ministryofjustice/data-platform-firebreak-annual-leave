@@ -13,7 +13,6 @@
     "GITHUB_USER": "${localEnv:GITHUB_USER}"
   },
   "postCreateCommand": "bash scripts/devcontainer/post-create.sh",
-  // "postStartCommand": "bash scripts/devcontainer/post-start.sh",
   "runArgs": ["--name=data-platform-annual-leave-devcontainer"],
   "customizations": {
     "vscode": {
