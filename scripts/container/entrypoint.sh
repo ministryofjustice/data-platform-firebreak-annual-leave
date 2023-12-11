@@ -2,7 +2,7 @@
 
 MODE=${MODE:-"run"}
 ADDRESS=${ADDRESS:-"0.0.0.0"}
-PORT=${PORT:"3000"}
+PORT=${PORT:-"3000"}
 
 case "$MODE" in
 "run")
