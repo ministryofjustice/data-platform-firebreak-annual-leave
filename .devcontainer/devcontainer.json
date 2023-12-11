@@ -1,0 +1,34 @@
+{
+	"name": "data-platform-annual-leave",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+	  "ghcr.io/devcontainers/features/node:1": { "version": "20.9.0"},
+	  "ghcr.io/devcontainers/features/ruby:1": { "version": "3.2.2" },
+	  "ghcr.io/devcontainers/features/common-utils:2": { "configureZshAsDefaultShell": true },
+	  "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+	  "./features/src/postgresql": {}
+	},
+	"containerEnv": {
+      "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+      "GITHUB_USER": "${localEnv:GITHUB_USER}"
+	},
+	"postCreateCommand": "bash scripts/devcontainer/post-create.sh",
+	// "postStartCommand": "bash scripts/devcontainer/post-start.sh",
+	"runArgs": ["--name=data-platform-annual-leave-devcontainer"],
+	"customizations": {
+	  "vscode": {
+		"settings": {
+			"dotfiles.repository": "https://github.com/${localEnv:GITHUB_USER}/dotfiles",
+			"dotfiles.targetPath": "~/dotfiles",
+			"dotfiles.installCommand": "setup.sh"
+		},
+		"extensions": [
+		  "EditorConfig.EditorConfig",
+		  "GitHub.vscode-github-actions",
+		  "GitHub.vscode-codeql",
+		  "github.copilot",
+		  "eamodio.gitlens"
+		]
+	  }
+	}
+}
