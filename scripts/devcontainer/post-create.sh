@@ -12,5 +12,8 @@ gem install rails
 # Install bundler
 gem install bundler
 
+# Install rubocop
+gem install rubocop 
+
 # Update 
 gem update
