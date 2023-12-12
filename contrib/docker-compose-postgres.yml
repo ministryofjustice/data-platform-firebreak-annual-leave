@@ -2,17 +2,16 @@
 version: "3.8"
 
 services:
-  postgres:
+  postgresql:
     image: public.ecr.aws/docker/library/postgres:15.4
     restart: always
     environment:
-      POSTGRES_USER: annualleave
-      POSTGRES_PASSWORD: annualleave
-      POSTGRES_DB: annualleave
+      POSTGRES_USER: annual_leave
+      POSTGRES_PASSWORD: annual_leave
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U annualleave"]
+      test: ["CMD-SHELL", "pg_isready -U annual_leave"]
       interval: 5s
       timeout: 5s
       retries: 5
