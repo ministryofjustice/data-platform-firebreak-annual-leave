@@ -20,3 +20,6 @@ gem install rubocop
 
 # Update 
 gem update
+
+# Bundle install
+bundle install
