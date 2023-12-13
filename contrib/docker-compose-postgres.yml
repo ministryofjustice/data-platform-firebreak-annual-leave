@@ -8,6 +8,7 @@ services:
     environment:
       POSTGRES_USER: annual_leave
       POSTGRES_PASSWORD: annual_leave
+      POSTGRES_DB: annual_leave
     ports:
       - "5432:5432"
     healthcheck:
