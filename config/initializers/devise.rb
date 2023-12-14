@@ -274,9 +274,9 @@ Devise.setup do |config|
   CLIENT_ID = Rails.application.credentials.azure[:client_id]
   CLIENT_SECRET = Rails.application.credentials.azure[:client_secret]
 
-  config.omniauth :azure_activedirectory_v2, 
-    client_id: CLIENT_ID, 
-    client_secret: CLIENT_SECRET
+  config.omniauth :azure_activedirectory_v2,
+                  client_id: CLIENT_ID,
+                  client_secret: CLIENT_SECRET
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
