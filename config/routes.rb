@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get "/healthcheck/live", to: proc { [200, {}, %w[OK]] }
+  devise_for :users
 
-  # Defines the root path route ("/")
-  root "home#index"
-
-  # get "route", to: "use this controller to render#this view in the route folder"
-  get "home", to: "home#index"
+  root to: 'home#index'
+  get 'home/index'
+  get 'up' => 'rails/health#show', as: :rails_health_check
 end
