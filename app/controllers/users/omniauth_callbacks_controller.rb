@@ -8,9 +8,9 @@ module Users
       @user = find_or_create_user_from_omniauth
       handle_user_authentication
     end
-    
+
     private
-    
+
     def find_or_create_user_from_omniauth
       data = request.env['omniauth.auth']['info']
       user = User.find_by(email: data['email'])
@@ -22,7 +22,7 @@ module Users
       )
       user
     end
-    
+
     def handle_user_authentication
       if @user.persisted?
         set_flash_and_redirect('success', new_user_session_path)
@@ -30,7 +30,7 @@ module Users
         set_flash_and_redirect('failure', new_user_registration_url)
       end
     end
-    
+
     def set_flash_and_redirect(message, redirect_path)
       flash[:notice] = message
       sign_in_and_redirect @user, event: :authentication if message == 'success'
