@@ -26,3 +26,4 @@ env/
 *.code-workspace
 *.sha256
 terraform.tfstate
+/config/credentials/development.key
