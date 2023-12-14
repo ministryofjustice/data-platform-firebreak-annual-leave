@@ -3,8 +3,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: annual_leave
-  password: annual_leave
+  username: annualleave
+  password: annualleave
   host: 127.0.0.1
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
