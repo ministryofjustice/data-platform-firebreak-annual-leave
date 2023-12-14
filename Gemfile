@@ -13,7 +13,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'turbo-rails'
-gem "govuk-components"
+gem 'govuk-components'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]

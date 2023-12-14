@@ -26,3 +26,8 @@ env/
 *.code-workspace
 *.sha256
 terraform.tfstate
+node_modules
+app/assets
+app/javascript
+package-lock.json
+Gemfile.lock
