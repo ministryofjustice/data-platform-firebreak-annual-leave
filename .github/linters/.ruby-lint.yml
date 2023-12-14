@@ -32,15 +32,8 @@ Metrics/PerceivedComplexity:
 # Offense count: 4
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'app/helpers/*'
-    - 'app/mailers/*'
-    - 'app/models/*'
-    - 'app/controllers/*'
-    - 'config/application.rb'
-    - 'db/migrate/*'
+  Enabled: false
+
 # Offense count: 29
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: EnforcedStyle.
@@ -59,6 +52,10 @@ Style/GlobalStdStream:
 Style/IfUnlessModifier:
   Exclude:
     - 'bin/bundle'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -84,3 +81,6 @@ Layout/LineLength:
 Metrics/BlockLength:
   Exclude:
     - 'config/environments/development.rb'
+
+Metrics/AbcSize:
+  Max: 50
