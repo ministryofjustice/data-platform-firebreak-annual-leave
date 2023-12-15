@@ -31,3 +31,4 @@ app/assets
 app/javascript
 package-lock.json
 Gemfile.lock
+/config/credentials/development.key

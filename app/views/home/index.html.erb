@@ -10,3 +10,4 @@ accordion.with_section(heading_text: "Two") { tag.p("Two content") }
 
 accordion.with_section(heading_text: "Three", expanded: true) { tag.p("Three content") }
 end %>
+<%= button_to( "Log Out", destroy_user_session_path, method: :delete ) %>
