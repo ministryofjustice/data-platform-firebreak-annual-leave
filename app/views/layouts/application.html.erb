@@ -6,14 +6,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_importmap_tags %>
-    <%= stylesheet_link_tag "govuk-frontend.min" %>
+    <%= stylesheet_link_tag 'govuk-frontend.min' %>
   </head>
 
   <body class="govuk-template__body">
     <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
-    <script type="module" src="javascript/govuk-frontend.min.js"></script>
+    <%# <script type="module" src="javascript/govuk-frontend.min.js"></script> %>
     <script type="module">
-      import { initAll } from 'javascript/govuk-frontend.min.js'
+      import { initAll } from 'govuk-frontend'
       initAll()
     </script>
     <%= yield %>

@@ -2,3 +2,11 @@
 <div>
     <%= govuk_inset_text(text: "Important message")%>
 </div>
+
+<%= govuk_accordion do |accordion|
+accordion.with_section(heading_text: "One") { tag.p("One content") }
+
+accordion.with_section(heading_text: "Two") { tag.p("Two content") }
+
+accordion.with_section(heading_text: "Three", expanded: true) { tag.p("Three content") }
+end %>
