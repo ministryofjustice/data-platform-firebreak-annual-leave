@@ -4,7 +4,7 @@
 import 'govuk-frontend'
 
 // import { initAll } from '../../app/javascript/govuk-frontend.min.js';
-import { initAll } from '../../node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'
+import { initAll } from 'govuk-frontend'
 initAll()
 
 // This is right ^ I'm sure, you get errors in the console if you include it in the application.html.erb
