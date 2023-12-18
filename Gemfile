@@ -7,6 +7,7 @@ gem 'rails', '~> 7.1.2'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
+gem 'govuk-components'
 gem 'importmap-rails'
 gem 'jsbundling-rails'
 gem 'jbuilder'
