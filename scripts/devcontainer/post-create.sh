@@ -16,10 +16,14 @@ gem install rails
 gem install bundler
 
 # Install rubocop
-gem install rubocop 
+gem install rubocop
 
-# Update 
+# Update
 gem update
 
 # Bundle install
 bundle install
+
+yarn add govuk-frontend@5.0.0 \
+    && cp -r node_modules/govuk-frontend/dist/govuk/assets public/assets \
+    && cp node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css app/assets/stylesheets

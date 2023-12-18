@@ -1,4 +1,16 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<body class="govuk-template__body">
+<h1 class="govuk-heading-xl">Home#index</h1>
+<div>
+    <%= govuk_inset_text(text: "Important message")%>
+</div>
 
+<%= govuk_accordion do |accordion|
+accordion.with_section(heading_text: "First",
+                      summary_text: "First summary") { tag.p("First content") }
+
+accordion.with_section(heading_text: "Two") { tag.p("Two content") }
+
+accordion.with_section(heading_text: "Three", expanded: true) { tag.p("Three content") }
+end %>
 <%= button_to( "Log Out", destroy_user_session_path, method: :delete ) %>
+</body>
