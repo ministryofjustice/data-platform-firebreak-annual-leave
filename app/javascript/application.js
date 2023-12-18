@@ -1,9 +1,7 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 // import '@hotwired/turbo-rails'
 // import 'controllers'
-import 'govuk-frontend'
 
-// import { initAll } from '../../app/javascript/govuk-frontend.min.js';
 import { initAll } from 'govuk-frontend'
 initAll()
 
