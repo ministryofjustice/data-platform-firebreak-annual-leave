@@ -1,4 +1,7 @@
 {
+    "rules": {
+        "alpha-value-notation": "number"
+      },
     "overrides": [
         {
             "files": ["*.scss", "**/*.scss"],
