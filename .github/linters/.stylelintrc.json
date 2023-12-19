@@ -1,7 +1,7 @@
 {
     "overrides": [
         {
-        "files": ["*.scss", "**/*.scss"],
-        "customSyntax": "postcss-scss"
+            "files": ["*.scss", "**/*.scss"],
+            "customSyntax": "postcss-scss"
         },
 }
