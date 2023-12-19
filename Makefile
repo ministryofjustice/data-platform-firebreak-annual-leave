@@ -16,4 +16,7 @@ db-setup:
 	rails db:seed
 
 db-fresh:
-	rails db:drop db:create db:migrate db:seed 
+	rails db:drop db:create db:migrate db:seed
+
+autocorrect:
+	rubocop --auto-correct && standard --fix
