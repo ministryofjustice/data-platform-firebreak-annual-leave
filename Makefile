@@ -20,3 +20,6 @@ db-fresh:
 
 autocorrect:
 	rubocop --auto-correct && standard --fix
+
+local-db-connect:
+	psql --user annual_leave --host 127.0.0.1
