@@ -1,0 +1,30 @@
+<div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This was created as part of <a href="https://github.com/ministryofjustice/data-platform/discussions/2472">this</a> firebreak project.
+      </span>
+    </p>
+  </div>
+
+  <% if user_signed_in? %>
+    <hr class="govuk-section-break govuk-section-break--xs govuk-section-break--visible">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <main class="govuk-main-wrapper govuk-!-padding-top-3" id="main-content" role="main">
+          <%= render "layouts/flash_notices" %>
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+  <% else %>
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <%= render "layouts/flash_notices" %>
+      <%= yield %>
+    </main>
+  <% end %>
+</div>
