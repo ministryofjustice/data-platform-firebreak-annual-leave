@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @leave_period %>
+
+<div>
+  <%= link_to "Edit this leave period", edit_leave_period_path(@leave_period) %> |
+  <%= link_to "Back to leave periods", leave_periods_path %>
+
+  <%= button_to "Destroy this leave period", @leave_period, method: :delete %>
+</div>
