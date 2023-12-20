@@ -1,0 +1,26 @@
+<h1 class="govuk-heading-l">Your Booked Leave</h1>
+
+<% if current_user.leave_records.any? %>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Start Date</th>
+        <th class="govuk-table__header">End Date</th>
+        <th class="govuk-table__header">Booked Date</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <% current_user.leave_records.each do |record| %>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><%= record.start_date %></td>
+          <td class="govuk-table__cell"><%= record.end_date %></td>
+          <td class="govuk-table__cell"><%= record.created_at.strftime("%Y-%m-%d") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="govuk-body">You have not booked any leave yet.</p>
+<% end %>
+
+<%= link_to 'Book New Leave', new_leave_record_path, class: "govuk-button", role: "button", draggable: "false" %>

@@ -1,6 +1,10 @@
 class LeaveRecordsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @leave_records = current_user.leave_records
+  end
+
   def new
     @leave_record = LeaveRecord.new
   end
