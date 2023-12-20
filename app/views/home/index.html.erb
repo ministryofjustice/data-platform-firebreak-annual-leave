@@ -1,10 +1,23 @@
-<h1>Home#index</h1>
-<p>
-	Find me in app/views/home/index.html.erb
-</p>
-<p>
-	<%= User.first.email %>
-</p>
-<p>
-	<%= govuk_button_to( "Log Out", destroy_user_session_path, method: :delete ) %>
-</p>
+<h1 class="govuk-heading-l">🗓️ <%= current_user.email.split("@").first.capitalize %>'s Annual Leave</h1>
+
+<div class="govuk-form-group govuk-body">
+	User: <%= current_user.email %>
+</div>
+
+<div class="govuk-form-group govuk-body">
+  Yearly Annual Leave: <%= current_user.annual_leave %>
+</div>
+
+<div class="govuk-form-group govuk-body">
+  Remaining Annual Leave: <%= current_user.annual_leave %>
+</div>
+
+<div class="govuk-form-group govuk-body">
+	Used Annual Leave: <%= 25 - current_user.annual_leave %>
+</div>
+
+<%= link_to 'Book Annual Leave', new_leave_record_path, class: "govuk-button", role: "button", draggable: "false" %>
+
+<%= link_to 'View Your Leave Records', leave_records_path, class: "govuk-button", role: "button", draggable: "false" %>
+
+<%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "govuk-button", role: "button", draggable: "false" %>

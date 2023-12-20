@@ -77,10 +77,13 @@ Style/SpecialGlobalVars:
 # URISchemes: http, https
 Layout/LineLength:
   Max: 198
+  Exclude:
+    - 'app/models/leave_record.rb'
 
 Metrics/BlockLength:
   Exclude:
     - 'config/environments/development.rb'
+    - 'db/schema.rb'
 
 Metrics/AbcSize:
   Max: 50

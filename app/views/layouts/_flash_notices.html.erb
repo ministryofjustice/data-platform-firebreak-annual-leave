@@ -1,21 +1,22 @@
 <% flash.each do |name, msg| -%>
-  <% next if name == "timedout" %>
-  <% next if msg.empty? %>
+	<% next if name == "timedout" %>
+	<% next if msg.empty? %>
 
-<% if name == 'notice' %>
-	<%= govuk_notification_banner(title_text: "Success", success: true) do |nb| %>
-		<% nb.with_heading %>
-			<% msg %>
-		<% end %>
-  <% end %>
-  <% if name == 'alert' %>
+	<% if name == 'notice' %>
+		<%= govuk_notification_banner(title_text: "Success", success: true) do |nb| %>
+			<% nb.with_heading %>
+				<% msg %>
+			<% end %>
+	<% end %>
+
+	<% if name == 'alert' %>
 		<div class="govuk-error-summary">
-			<h2 class= "govuk-error-summary__title">
+			<h2 class="govuk-error-summary__title">
 				There is a problem
 			</h2>
 			<div class="govuk-error-summary__body">
 				<%= msg %>
 			</div>
 		</div>
-  <% end %>
+	<% end %>
 <% end %>

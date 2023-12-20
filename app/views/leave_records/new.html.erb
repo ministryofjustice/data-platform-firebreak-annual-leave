@@ -1,0 +1,32 @@
+<h1 class="govuk-heading-l">What date(s) would you like to book Annual Leave on?</h1>
+
+<%= form_with(model: @leave_record, local: true) do |form| %>
+  <% if @leave_record.errors.any? %>
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list--bullet govuk-error-summary__list">
+          <% @leave_record.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="govuk-form-group">
+    <%= form.label :start_date, class: "govuk-label" %>
+    <%= form.date_field :start_date, class: "govuk-input" %>
+  </div>
+
+  <div class="govuk-form-group">
+    <%= form.label :end_date, class: "govuk-label" %>
+    <%= form.date_field :end_date, class: "govuk-input" %>
+  </div>
+
+  <div class="govuk-form-group">
+    <%= form.submit "Submit", class: "govuk-button" %>
+  </div>
+<% end %>
