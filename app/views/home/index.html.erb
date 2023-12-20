@@ -1,10 +1,14 @@
-<h1>Home#index</h1>
+<h1 class="govuk-heading-l"> 🗓️ <%= current_user.email.split("@").first.capitalize %>'s Annual Leave</h1>
 <p>
-	Find me in app/views/home/index.html.erb
+	User: <%= current_user.email %>
 </p>
 <p>
-	<%= User.first.email %>
+	Remaining Annual Leave: <%= current_user.annual_leave %>
 </p>
+<p>
+	Used Annual Leave: <%= 25 - User.first.annual_leave %>
+</p>
+
 <p>
 	<%= govuk_button_to( "Log Out", destroy_user_session_path, method: :delete ) %>
 </p>
