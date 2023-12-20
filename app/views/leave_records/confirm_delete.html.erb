@@ -1,0 +1,10 @@
+<h1 class="govuk-heading-l">Confirm Deletion</h1>
+
+<div class="govuk-form-group">
+  <p class="govuk-body">Are you sure you want to delete this leave record?</p>
+  <p class="govuk-body">Start Date: <%= @leave_record.start_date %></p>
+  <p class="govuk-body">End Date: <%= @leave_record.end_date %></p>
+  
+  <%= button_to 'Confirm Delete', leave_record_path(@leave_record), method: :delete, class: 'govuk-button govuk-button--warning' %>
+  <%= link_to 'Cancel', leave_records_path, class: 'govuk-button govuk-button--secondary' %>
+</div>

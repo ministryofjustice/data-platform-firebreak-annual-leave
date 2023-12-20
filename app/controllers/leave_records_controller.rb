@@ -26,6 +26,19 @@ class LeaveRecordsController < ApplicationController
       redirect_to root_path, alert: 'Leave record not found or not accessible'
     end
   end
+
+  def confirm_delete
+    @leave_record = current_user.leave_records.find(params[:id])
+  end
+
+  def destroy
+    @leave_record = current_user.leave_records.find(params[:id])
+    if @leave_record.destroy
+      redirect_to leave_records_path, notice: 'Leave record was successfully deleted.'
+    else
+      redirect_to leave_records_path, alert: 'Error deleting leave record.'
+    end
+  end
   
   private
   

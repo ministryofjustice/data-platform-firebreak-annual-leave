@@ -7,6 +7,7 @@
         <th class="govuk-table__header">Start Date</th>
         <th class="govuk-table__header">End Date</th>
         <th class="govuk-table__header">Booked Date</th>
+        <th class="govuk-table__header">Actions</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
@@ -15,6 +16,7 @@
           <td class="govuk-table__cell"><%= record.start_date %></td>
           <td class="govuk-table__cell"><%= record.end_date %></td>
           <td class="govuk-table__cell"><%= record.created_at.strftime("%Y-%m-%d") %></td>
+          <td class="govuk-table__cell"><%= link_to 'Delete', confirm_delete_leave_record_path(record), method: :delete, data: { confirm: 'Are you sure?' }, class: 'govuk-button govuk-button--warning' %></td>
         </tr>
       <% end %>
     </tbody>
