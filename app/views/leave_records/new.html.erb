@@ -1,0 +1,29 @@
+<h1>Book Annual Leave</h1>
+
+<%= form_with(model: @leave_record, local: true) do |form| %>
+  <% if @leave_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leave_record.errors.count, "error") %> prohibited this leave record from being saved:</h2>
+
+      <ul>
+      <% @leave_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
