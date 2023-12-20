@@ -272,15 +272,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
 
-  if Rails.env.development?
-    config.omniauth :azure_activedirectory_v2,
-                    client_id: Rails.application.credentials.development.azure[:client_id],
-                    client_secret: Rails.application.credentials.development.azure[:client_secret]
-  elsif Rails.env.production?
-    config.omniauth :azure_activedirectory_v2,
-                    client_id: Rails.application.credentials.production.azure[:client_id],
-                    client_secret: Rails.application.credentials.production.azure[:client_secret]
-  end
+  config.omniauth :azure_activedirectory_v2,
+                  client_id: Rails.application.credentials.azure[:client_id],
+                  client_secret: Rails.application.credentials.azure[:client_secret]
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
