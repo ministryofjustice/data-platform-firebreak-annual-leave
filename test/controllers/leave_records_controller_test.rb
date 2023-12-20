@@ -57,4 +57,11 @@ class LeaveRecordsControllerTest < ActionDispatch::IntegrationTest
     get leave_record_url(other_user_leave_record)
     assert_redirected_to "/"
   end
+
+  test "should delete leave record" do
+    assert_difference('LeaveRecord.count', -1) do
+      delete leave_record_path(@leave_record)
+    end
+    assert_redirected_to leave_records_path
+  end
 end
