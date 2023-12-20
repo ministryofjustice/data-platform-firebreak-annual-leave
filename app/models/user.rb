@@ -6,5 +6,4 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[azure_activedirectory_v2]
 
   has_many :leave_records
-
 end
