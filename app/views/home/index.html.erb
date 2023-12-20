@@ -8,6 +8,9 @@
 <p>
 	Used Annual Leave: <%= 25 - User.first.annual_leave %>
 </p>
+<p>
+	<%= link_to 'Book Annual Leave', new_leave_record_path %>
+</p>
 
 <p>
 	<%= govuk_button_to( "Log Out", destroy_user_session_path, method: :delete ) %>
