@@ -17,11 +17,11 @@ class LeaveRecord < ApplicationRecord
                                     .where.not(id: id) # Exclude the current record if it's already saved
                                     .where("(start_date <= ? AND end_date >= ?) OR (start_date >= ? AND start_date <= ?) OR (end_date >= ? AND end_date <= ?)", start_date, start_date, start_date, end_date, start_date, end_date)
     
-    errors.add(:base, "overlaps with existing leave") if overlapping_leaves.exists?
+    errors.add(:base, "Dates overlaps with existing leave.") if overlapping_leaves.exists?
   end
 
   def no_duplicate_booking
     existing_record = LeaveRecord.where(user_id: user_id, start_date: start_date, end_date: end_date).exists?
-    errors.add(:base, "Leave for these dates already booked") if existing_record
+    errors.add(:base, "Leave for these dates already booked.") if existing_record
   end
 end
