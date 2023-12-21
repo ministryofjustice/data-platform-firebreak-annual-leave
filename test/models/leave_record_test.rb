@@ -4,6 +4,10 @@ class LeaveRecordTest < ActiveSupport::TestCase
   setup do
     @user = users(:john) # Assuming you have a user fixture named 'john'
     @existing_leave = LeaveRecord.create(user: @user, start_date: '2023-01-01', end_date: '2023-01-10')
+    LeaveRecord.create(user: @user, start_date: '2023-01-01', end_date: '2023-01-05')
+    LeaveRecord.create(user: @user, start_date: '2023-02-01', end_date: '2023-02-03')
+    LeaveRecord.create(user: @user, start_date: '2023-03-10', end_date: '2023-03-15')
+    # Total = 11 days (some weekends)
   end
 
   test 'should not save LeaveRecord without required attributes' do
@@ -34,5 +38,9 @@ class LeaveRecordTest < ActiveSupport::TestCase
   test 'should not allow leave records that entirely encompass existing leave' do
     overlapping_leave = LeaveRecord.new(user: users(:john), start_date: '2022-12-31', end_date: '2023-01-11')
     assert_not overlapping_leave.valid?, 'Allowed overlapping leave (full encompass)'
+  end
+
+  test 'used_leave should return correct total days of leave' do
+    assert_equal 11, @user.used_leave, 'used_leave did not return the correct total days of leave'
   end
 end
