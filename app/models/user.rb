@@ -21,4 +21,5 @@ class User < ApplicationRecord
 
   def remaining_leave
     self.annual_leave - self.used_leave
+  end
 end
