@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag "calendar" %>
+<%= month_calendar(events: @leave_periods) do |date, leave_periods| %>
+  <%= date %>
+  <% leave_periods.each do |leave_period| %>
+    <div>
+      <%= leave_period.name %>
+    </div>
+  <% end %>
+<% end %>
