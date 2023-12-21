@@ -9,17 +9,17 @@
 </div>
 
 <div class="govuk-form-group govuk-body">
-  Remaining Annual Leave: <%= current_user.annual_leave %>
+  Remaining Annual Leave: <%= @remaining_leave %>
 </div>
 
 <div class="govuk-form-group govuk-body">
-	Used Annual Leave: <%= 25 - current_user.annual_leave %>
+	Used Annual Leave: <%= @used_leave %>
 </div>
 
 <%= link_to 'Book Annual Leave', new_leave_record_path, class: "govuk-button", role: "button", draggable: "false" %>
 
 <%= link_to 'View Your Leave Records', leave_records_path, class: "govuk-button", role: "button", draggable: "false" %>
 
-<%= link_to 'View Calendar', "/calendar", class: "govuk-button", role: "button", draggable: "false" %>
+<%= link_to 'View Calendar', '/calendar', class: "govuk-button", role: "button", draggable: "false" %>
 
 <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "govuk-button", role: "button", draggable: "false" %>
