@@ -8,18 +8,18 @@ class User < ApplicationRecord
   has_many :leave_records
 
   def used_leave
-    @leave_records = self.leave_records
+    @leave_records = leave_records
     used_leave = 0
 
     # Count weekdays between
     @leave_records.each do |leave_record|
-      (leave_record.start_date...leave_record.end_date).each{|d| used_leave+=1 if (1..5).include?(d.wday)}
+      (leave_record.start_date...leave_record.end_date).each { |d| used_leave += 1 if (1..5).include?(d.wday) }
     end
 
     used_leave
   end
 
   def remaining_leave
-    self.annual_leave - self.used_leave
+    annual_leave - used_leave
   end
 end
