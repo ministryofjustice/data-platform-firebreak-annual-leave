@@ -3,7 +3,7 @@
   <%= date %>
   <% leave_periods.each do |leave_period| %>
     <div>
-      <%= leave_period.name %>
+      <%= User.find(leave_period.user_id).email %>
     </div>
   <% end %>
 <% end %>
