@@ -1,24 +1,21 @@
 <h1 class="govuk-heading-l">🗓️ <%= current_user.email.split("@").first.capitalize %>'s Annual Leave</h1>
 
 <div class="govuk-form-group govuk-body">
-	<strong>Remaining
-</div>
-
-<div class="govuk-form-group govuk-body">
   <strong>Yearly Annual Leave:</strong> <%= current_user.annual_leave %>
 </div>
 
 <div class="govuk-form-group govuk-body">
-  <strong>Remaining Annual Leave:</strong> <%= current_user.annual_leave %>
+  <strong>Remaining Annual Leave:</strong> <%= current_user.remaining_leave %>
 </div>
 
 <div class="govuk-form-group govuk-body">
-	<strong>Used Annual Leave:</strong> <%= 25 - current_user.annual_leave %>
+	<strong>Used Annual Leave:</strong> <%= current_user.used_leave %>
 </div>
 
 <div class="govuk-form-group govuk-body">
 	<%= button_to 'Book New Leave', new_leave_record_path, class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
 	<%= button_to 'View Booked Leave', leave_records_path, class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
+  <%= link_to 'View Calendar', '/calendar', class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
 </div>
 
-<%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
+<%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "govuk-button", role: "button", draggable: "false" %>
