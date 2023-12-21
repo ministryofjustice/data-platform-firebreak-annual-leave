@@ -19,7 +19,7 @@
 <div class="govuk-form-group govuk-body">
 	<%= button_to 'Book New Leave', new_leave_record_path, class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
 	<%= button_to 'View Booked Leave', leave_records_path, class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
-  <%= button_to 'View Calendar', '/calendar', class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
+  <%= link_to 'View Calendar', '/calendar', class: "govuk-button govuk-button--secondary", role: "button", draggable: "false" %>
 </div>
 
 <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "govuk-button", role: "button", draggable: "false" %>
