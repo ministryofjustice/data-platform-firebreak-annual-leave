@@ -1,0 +1,36 @@
+<h2 class="govuk-heading-l">Log In / Sign Up</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "govuk-form" }) do |f| %>
+  <div class="govuk-form-group">
+    <%= f.label :email, class: "govuk-label" %>
+      <div id="email-hint" class="govuk-hint">
+        Use your @digital.justice.gov.uk email address
+      </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "govuk-input" %>
+  </div>
+
+  <div class="govuk-form-group">
+    <%= f.label :password, class: "govuk-label" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "govuk-input" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="govuk-form-group">
+      <%= f.label :remember_me, class: "govuk-label govuk-checkbox-label" do %>
+        <%= f.check_box :remember_me, class: "govuk-checkbox" %>
+        Remember me
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <div class="govuk-form-group">
+    <%= f.submit "Log in", class: "govuk-button govuk-button--primary" %>
+
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <a class="govuk-button govuk-button--secondary" href="<%= new_password_path(resource_name) %>">Forgot your password?</a><br />
+    <% end %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
