@@ -3,7 +3,7 @@
   <%= date %>
   <% leave_periods.each do |leave_period| %>
     <div>
-      <%= User.find(leave_period.user_id).email %>
+      <%= current_user.email.split("@").first.capitalize %>
     </div>
   <% end %>
 <% end %>
