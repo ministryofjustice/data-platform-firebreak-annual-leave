@@ -1,0 +1,9 @@
+<h1 class="govuk-heading-l">Confirm Deletion</h1>
+
+<div class="govuk-form-group">
+  <p class="govuk-body">Are you sure you want to delete this Team?</p>
+  <p class="govuk-body">Team: <%= @team.name %></p>
+
+  <%= button_to 'Confirm Delete', team_path(@team), method: :delete, class: 'govuk-button govuk-button--warning' %>
+  <%= link_to 'Cancel', teams_path, class: 'govuk-button govuk-button--secondary' %>
+</div>
