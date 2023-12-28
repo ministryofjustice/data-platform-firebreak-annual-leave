@@ -1,0 +1,26 @@
+<h1 class="govuk-heading-l">All Team Memberships</h1>
+
+<% if @user_teams.any? %>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Team name</th>
+        <th class="govuk-table__header">User email</th>
+        <th class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <% @user_teams.each do |user_team| %>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><%= user_team.team_name %></td>
+          <td class="govuk-table__cell"><%= user_team.user_email %></td>
+          <td class="govuk-table__cell"><%= link_to 'Delete', confirm_delete_user_team_path(user_team), method: :delete, data: { confirm: 'Are you sure?' }, class: 'govuk-button govuk-button--warning' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="govuk-body">No team memberships are created yet.</p>
+<% end %>
+
+<%= link_to 'Create New Team Membership', new_user_team_path, class: "govuk-button", role: "button", draggable: "false" %>
