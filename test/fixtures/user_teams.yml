@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_email: MyString
-  team_name: MyString
+  user_id: john@example.com
+  team_id: DPL
 
 two:
-  user_email: MyString
-  team_name: MyString
+  user_id: jane@example.com
+  team_id: Tools

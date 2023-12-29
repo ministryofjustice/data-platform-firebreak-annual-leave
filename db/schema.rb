@@ -10,27 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_27_121907) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_28_095408) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "booked_leaves", force: :cascade do |t|
-    t.string "user"
-    t.string "name"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "leave_periods", force: :cascade do |t|
-    t.string "user"
-    t.string "name"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "leave_records", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -44,15 +26,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_27_121907) do
     t.index ["user_id"], name: "index_leave_records_on_user_id"
   end
 
-  create_table "team_memberships", force: :cascade do |t|
-    t.string "team"
-    t.string "user"
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams", force: :cascade do |t|
-    t.string "name"
+  create_table "user_teams", force: :cascade do |t|
+    t.string "user_id"
+    t.string "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

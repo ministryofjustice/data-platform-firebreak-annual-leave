@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   get 'home/index'
-  get 'calendar', to: 'calendar#index'
+  get 'calendar', to: 'calendar#index', as: 'my_calendar'
+  get 'calendar/team', to: 'calendar#team', as: 'team_calendar'
   resources :leave_records, only: %i[index new create show destroy]
   resources :teams, only: %i[index new create show destroy]
   resources :user_teams, only: %i[index new create show destroy]

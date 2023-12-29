@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag "calendar" %>
+<%= month_calendar(events: @leave_periods) do |date, leave_periods| %>
+  <%= date %>
+  <% leave_periods.each do |leave_period| %>
+    <div>
+      <%= leave_period.user.email.split("@").first.capitalize %>
+    </div>
+  <% end %>
+<% end %>
+<%= link_to 'My calendar', my_calendar_path, class: "govuk-button", role: "button", draggable: "false" %>
+<%= link_to 'My teams\' calendar', team_calendar_path, class: "govuk-button", role: "button", draggable: "false" %>
