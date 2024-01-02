@@ -11,8 +11,10 @@ class UserTeamsController < ApplicationController
 
   def create
     # Team name and user email should be unique, so they should map to an id
-    team_id = Team.where(name: params[:user_team][:team_name]).first.id
-    user_id = User.where(email: params[:user_team][:user_email]).first.id
+    if team_record = Team.where(name: params[:user_team][:team_name]).first
+      team_id = team_record.id; end
+    if user_record = User.where(email: params[:user_team][:user_email]).first
+      user_id = user_record.id; end
     @user_team = UserTeam.create(team_id:, user_id:)
     if @user_team.save
       redirect_to user_teams_path, notice: 'Team membership was successfully created.'
@@ -36,6 +38,6 @@ class UserTeamsController < ApplicationController
   end
 
   def user_team_params
-    params.permit(:team_name, :user_email)
+    params.require(:user_team).permit(:team_name, :user_email)
   end
 end
