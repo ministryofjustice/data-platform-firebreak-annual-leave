@@ -106,3 +106,8 @@ $govuk-assets-path: "/";
     bottom: 0;
     width: 100%;
 }
+
+.active .govuk-header__link {
+    text-decoration: underline;
+  }
+  
