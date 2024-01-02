@@ -3,20 +3,19 @@ class UserTeamsController < ApplicationController
     @user_teams = UserTeam.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
-    @user_team = UserTeam.new()
+    @user_team = UserTeam.new
   end
 
   def create
     # Team name and user email should be unique, so they should map to an id
     team_id = Team.where(name: params[:user_team][:team_name]).first.id
     user_id = User.where(email: params[:user_team][:user_email]).first.id
-    @user_team = UserTeam.create(team_id: team_id, user_id: user_id)
+    @user_team = UserTeam.create(team_id:, user_id:)
     if @user_team.save
-      redirect_to user_teams_path, notice: "Team membership was successfully created."
+      redirect_to user_teams_path, notice: 'Team membership was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

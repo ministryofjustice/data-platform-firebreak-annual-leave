@@ -3,17 +3,16 @@ class TeamsController < ApplicationController
     @teams = Team.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
-    @team = Team.new()
+    @team = Team.new
   end
 
   def create
     @team = Team.create(team_params)
     if @team.save
-      redirect_to teams_path, notice: "Team was successfully created."
+      redirect_to teams_path, notice: 'Team was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
