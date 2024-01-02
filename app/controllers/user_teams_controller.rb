@@ -11,9 +11,9 @@ class UserTeamsController < ApplicationController
 
   def create
     # Team name and user email should be unique, so they should map to an id
-    if team_record = Team.where(name: params[:user_team][:team_name]).first
+    if (team_record = Team.where(name: params[:user_team][:team_name]).first)
       team_id = team_record.id; end
-    if user_record = User.where(email: params[:user_team][:user_email]).first
+    if (user_record = User.where(email: params[:user_team][:user_email]).first)
       user_id = user_record.id; end
     @user_team = UserTeam.create(team_id:, user_id:)
     if @user_team.save
