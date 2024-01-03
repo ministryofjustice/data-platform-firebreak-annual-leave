@@ -1,9 +1,28 @@
-<h1 class="govuk-heading-l">Team Members</h1>
+<h1 class="govuk-heading-l"><%= @team.name %> - Team Members</h1>
 
-<p class="govuk-body">The below users are members of this team:</p>
+<% if @team.users.empty? %>
+  <p class="govuk-body">There are no members in this team.</p>
+<% else %>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Email</th>
+        <th scope="col" class="govuk-table__header">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <% @team.users.each do |user| %>
+        <% user_team_record = UserTeam.find_by(user_id: user.id, team_id: @team.id) %>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><%= user.email %></td>
+          <td class="govuk-table__cell">
+            <%= link_to "Remove", user_team_path(user_team_record), method: :delete, data: { confirm: "Are you sure you want to remove this user from the team?" }, class: "govuk-button govuk-button--warning" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 
-<ul class="govuk-list govuk-list--bullet">
-  <% @team.users.each do |user| %>
-    <li class="govuk-list__item"><%= user.email %></li>
-  <% end %>
-</ul>
+
+<%= link_to 'Add User to Team', new_user_team_path, class: "govuk-button", role: "button", draggable: "false" %>

@@ -1,4 +1,4 @@
-<h1 class="govuk-heading-l">All Team Memberships</h1>
+<h1 class="govuk-heading-l">Team Management</h1>
 
 <% if @user_teams.any? %>
   <table class="govuk-table">
@@ -14,7 +14,7 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><%= user_team.team&.name %></td>
           <td class="govuk-table__cell"><%= user_team.user.email %></td>
-          <td class="govuk-table__cell"><%= link_to 'Delete', confirm_delete_user_team_path(user_team), method: :delete, data: { confirm: 'Are you sure?' }, class: 'govuk-button govuk-button--warning' %></td>
+          <td class="govuk-table__cell"><%= link_to 'Remove', confirm_delete_user_team_path(user_team), method: :delete, data: { confirm: 'Are you sure?' }, class: 'govuk-button govuk-button--warning' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -23,4 +23,4 @@
   <p class="govuk-body">No team memberships are created yet.</p>
 <% end %>
 
-<%= link_to 'Create New Team Membership', new_user_team_path, class: "govuk-button", role: "button", draggable: "false" %>
+<%= link_to 'Add User to Team', new_user_team_path, class: "govuk-button", role: "button", draggable: "false" %>

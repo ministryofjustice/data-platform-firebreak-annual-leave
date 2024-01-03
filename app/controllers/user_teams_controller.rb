@@ -5,7 +5,9 @@ class UserTeamsController < ApplicationController
     @user_teams = UserTeam.all
   end
 
-  def show; end
+  def show
+    @user_team = UserTeam.find(params[:id])
+  end
 
   def new
     @user_team = UserTeam.new
@@ -19,7 +21,7 @@ class UserTeamsController < ApplicationController
       user_id = user_record.id; end
     @user_team = UserTeam.create(team_id:, user_id:)
     if @user_team.save
-      redirect_to user_teams_path, notice: 'Team membership was successfully created.'
+      redirect_to user_teams_path, notice: 'User was added to team successfully.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,13 +35,9 @@ class UserTeamsController < ApplicationController
     @user_team = UserTeam.find(params[:id])
     @user_team.destroy
     if @user_team.destroy
-      redirect_to user_teams_path, notice: 'Team was successfully deleted.'
+      redirect_to user_teams_path, notice: 'User was successfully removed from team.'
     else
       redirect_to user_teams_path, alert: 'Error deleting team.'
     end
-  end
-
-  def user_team_params
-    params.require(:user_team).permit(:team_name, :user_email)
   end
 end
