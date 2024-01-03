@@ -4,4 +4,3 @@ class ChangeUserTeamIdsToBigint < ActiveRecord::Migration[7.1]
     change_column :user_teams, :team_id, 'bigint USING CAST(team_id AS bigint)'
   end
 end
-

@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :leave_records
   has_many :teams, through: :user_teams
 
-
   def used_leave
     @leave_records = leave_records
     used_leave = 0

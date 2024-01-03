@@ -5,8 +5,7 @@ class UserTeamsController < ApplicationController
     @user_teams = UserTeam.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @user_team = UserTeam.new

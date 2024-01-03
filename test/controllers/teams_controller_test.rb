@@ -9,17 +9,17 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
   end
 
-  test "should get index" do
+  test 'should get index' do
     get teams_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_team_url
     assert_response :success
   end
 
-  test "should create team" do
+  test 'should create team' do
     assert_difference('Team.count') do
       post teams_url, params: { team: { name: 'New Team' } }
     end
@@ -28,24 +28,24 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     assert_not flash[:notice].empty?
   end
 
-  test "should fail to create team and render new" do
+  test 'should fail to create team and render new' do
     assert_no_difference('Team.count') do
       post teams_url, params: { team: { name: '' } } # Assuming name can't be blank
     end
     assert_response :unprocessable_entity
   end
 
-  test "should show team" do
+  test 'should show team' do
     get team_url(@team)
     assert_response :success
   end
 
-  test "should get confirm_delete" do
+  test 'should get confirm_delete' do
     get confirm_delete_team_url(@team)
     assert_response :success
   end
 
-  test "should destroy team" do
+  test 'should destroy team' do
     assert_difference('Team.count', -1) do
       delete team_url(@team)
     end
