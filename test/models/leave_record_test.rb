@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LeaveRecordTest < ActiveSupport::TestCase
   setup do
-    @user = users(:john) # Assuming you have a user fixture named 'john'
+    @user = users(:john)
     @existing_leave = LeaveRecord.create(user: @user, start_date: '2023-01-01', end_date: '2023-01-10')
     LeaveRecord.create(user: @user, start_date: '2023-01-01', end_date: '2023-01-05') # 4 weekdays, 1 weekend days
     LeaveRecord.create(user: @user, start_date: '2023-02-01', end_date: '2023-02-03') # 3 weekdays
