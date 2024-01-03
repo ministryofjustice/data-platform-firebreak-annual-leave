@@ -1,9 +1,12 @@
 class UserTeamsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @user_teams = UserTeam.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @user_team = UserTeam.new
