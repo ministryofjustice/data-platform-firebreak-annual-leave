@@ -1,7 +1,9 @@
-<h1>Team Members</h1>
+<h1 class="govuk-heading-l">Team Members</h1>
 
-<ul>
+<p class="govuk-body">The below users are members of this team:</p>
+
+<ul class="govuk-list govuk-list--bullet">
   <% @team.users.each do |user| %>
-    <li><%= user.name %></li>
+    <li class="govuk-list__item"><%= user.email %></li>
   <% end %>
 </ul>
