@@ -9,7 +9,7 @@ $govuk-assets-path: "/";
       -webkit-border-horizontal-spacing: 0px;
       -webkit-border-vertical-spacing: 0px;
       background-color: rgba(0, 0, 0, 0);
-      border: 1px solid rgb(221, 221, 221);
+      border: 1px solid #b1b4b6;
       border-collapse: collapse;
       box-sizing: border-box;
       max-width: 100%;
@@ -22,10 +22,10 @@ $govuk-assets-path: "/";
 
   th {
       padding: 6px;
-      border-bottom: 2px solid rgb(221, 221, 221);
+      border-bottom: 2px solid #b1b4b6;
       border-collapse: collapse;
-      border-left: 1px solid rgb(221, 221, 221);
-      border-right: 1px solid rgb(221, 221, 221);
+      border-left: 1px solid #b1b4b6;
+      border-right: 1px solid #b1b4b6;
       border-top: 0px none rgb(51, 51, 51);
       box-sizing: border-box;
       text-align: left;
@@ -36,17 +36,17 @@ $govuk-assets-path: "/";
       vertical-align: top;
       width: 14%;
 
-      border: 1px solid #ddd;
-      border-top-color: rgb(221, 221, 221);
+      border: 1px solid #b1b4b6;
+      border-top-color: #b1b4b6;
       border-top-style: solid;
       border-top-width: 1px;
-      border-right-color: rgb(221, 221, 221);
+      border-right-color: #b1b4b6;
       border-right-style: solid;
       border-right-width: 1px;
-      border-bottom-color: rgb(221, 221, 221);
+      border-bottom-color: #b1b4b6;
       border-bottom-style: solid;
       border-bottom-width: 1px;
-      border-left-color: rgb(221, 221, 221);
+      border-left-color: #b1b4b6;
       border-left-style: solid;
       border-left-width: 1px;
   }
@@ -60,7 +60,7 @@ $govuk-assets-path: "/";
   }
 
   .wday-0 {
-    background: #a2a2a2
+    background: #f3f2f1
   }
 
   .wday-1 {}
@@ -74,11 +74,11 @@ $govuk-assets-path: "/";
   .wday-5 {}
 
   .wday-6 {
-    background: #a2a2a2
+    background: #f3f2f1
   }
 
   .today {
-      background: #FFFFC0
+      background: #ffdd00
   }
 
   .past {}
@@ -88,11 +88,11 @@ $govuk-assets-path: "/";
   .start-date {}
 
   .prev-month {
-      background: #DDD;
+      background: #b1b4b6;
   }
 
   .next-month {
-      background: #DDD;
+      background: #b1b4b6;
   }
 
   .current-month {}
