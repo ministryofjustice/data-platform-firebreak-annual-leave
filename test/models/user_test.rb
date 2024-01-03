@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?, 'User was marked valid without an email'
     assert_not_empty user.errors[:email], 'No validation error for missing email'
   end
-  
+
   test 'should enforce uniqueness of email for User' do
     existing_user = users(:john)
     user = User.new(email: existing_user.email)
