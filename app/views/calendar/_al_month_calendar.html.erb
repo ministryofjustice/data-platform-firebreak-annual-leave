@@ -1,0 +1,10 @@
+<%= month_calendar(events: @leave_periods) do |date, leave_periods| %>
+  <%= date.day %>
+  <% leave_periods.each do |leave_period| %>
+    <div>
+      <%= leave_period.user.email.split("@").first.capitalize %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to 'Book New Leave', new_leave_record_path, class: "govuk-button", role: "button", draggable: "false" %>

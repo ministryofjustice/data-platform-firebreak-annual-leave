@@ -3,3 +3,111 @@ $govuk-new-link-styles: true;
 $govuk-assets-path: "/";
 
 @import "../../../node_modules/govuk-frontend/dist/govuk/all";
+
+.simple-calendar {
+  table {
+      -webkit-border-horizontal-spacing: 0px;
+      -webkit-border-vertical-spacing: 0px;
+      background-color: rgba(0, 0, 0, 0);
+      border: 1px solid #b1b4b6;
+      border-collapse: collapse;
+      box-sizing: border-box;
+      max-width: 100%;
+      width: 100%;
+  }
+
+  tr {
+      border-collapse: collapse;
+  }
+
+  th {
+      padding: 6px;
+      border-bottom: 2px solid #b1b4b6;
+      border-collapse: collapse;
+      border-left: 1px solid #b1b4b6;
+      border-right: 1px solid #b1b4b6;
+      border-top: 0px none rgb(51, 51, 51);
+      box-sizing: border-box;
+      text-align: left;
+  }
+
+  td {
+      padding: 6px;
+      vertical-align: top;
+      width: 14%;
+
+      border: 1px solid #b1b4b6;
+      border-top-color: #b1b4b6;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-right-color: #b1b4b6;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-bottom-color: #b1b4b6;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-left-color: #b1b4b6;
+      border-left-style: solid;
+      border-left-width: 1px;
+  }
+
+  .calendar-heading nav {
+      display: inline-block;
+  }
+
+  .day {
+      height: 80px;
+  }
+
+  .wday-0 {
+    background: #f3f2f1
+  }
+
+  .wday-1 {}
+
+  .wday-2 {}
+
+  .wday-3 {}
+
+  .wday-4 {}
+
+  .wday-5 {}
+
+  .wday-6 {
+    background: #f3f2f1
+  }
+
+  .today {
+      background: #ffdd00
+  }
+
+  .past {}
+
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+      background: #b1b4b6;
+  }
+
+  .next-month {
+      background: #b1b4b6;
+  }
+
+  .current-month {}
+
+  .has-events {}
+}
+
+// .sticky-footer {
+//     position: fixed;
+//     left: 0;
+//     bottom: 0;
+//     width: 100%;
+// }
+
+.active .govuk-header__link {
+    text-decoration: underline;
+  }
+  

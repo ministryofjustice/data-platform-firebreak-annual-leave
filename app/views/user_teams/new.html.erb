@@ -1,0 +1,32 @@
+<h1 class="govuk-heading-l">Who needs to be added to a team?</h1>
+
+<%= form_with(model: @user_team, local: true) do |form| %>
+  <% if @user_team.errors.any? %>
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list--bullet govuk-error-summary__list">
+          <% @user_team.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="govuk-form-group">
+    <%= form.label :team_name, class: "govuk-label", for: "sort" %>
+    <%= form.text_field :team_name, class: "govuk-input" %>
+  </div>
+
+  <div class="govuk-form-group">
+    <%= form.label :user_email, class: "govuk-label" %>
+    <%= form.text_field :user_email, class: "govuk-input" %>
+  </div>
+
+  <div class="govuk-form-group">
+    <%= form.submit "Submit", class: "govuk-button" %>
+  </div>
+<% end %>

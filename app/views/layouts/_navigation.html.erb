@@ -1,8 +1,16 @@
 <nav>
   <ul id="navigation" class="govuk-header__navigation" aria-label="Top Level Navigation">
     <% if user_signed_in? %>
-      <li class="govuk-header__navigation-item">
+      <li class="govuk-header__navigation-item <%= active_class(root_path) %>">
         <%= link_to "Home", root_path, class: "govuk-header__link", data: { topnav: "Home" } %>
+      </li>
+
+      <li class="govuk-header__navigation-item <%= active_class(my_calendar_path) %>">
+        <%= link_to "My Calendar", my_calendar_path, class: "govuk-header__link", data: { topnav: "My Calendar" } %>
+      </li>
+
+      <li class="govuk-header__navigation-item <%= active_class(team_calendar_path) %>">
+        <%= link_to "Team Calendar", team_calendar_path, class: "govuk-header__link", data: { topnav: "Team Calendar" } %>
       </li>
 
       <li class="govuk-header__navigation-item">

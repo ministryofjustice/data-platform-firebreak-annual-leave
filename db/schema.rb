@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_231_220_111_353) do
+ActiveRecord::Schema[7.1].define(version: 20_240_103_151_320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -24,6 +24,19 @@ ActiveRecord::Schema[7.1].define(version: 20_231_220_111_353) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['user_id'], name: 'index_leave_records_on_user_id'
+  end
+
+  create_table 'teams', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'user_teams', force: :cascade do |t|
+    t.bigint 'user_id'
+    t.bigint 'team_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
   create_table 'users', force: :cascade do |t|
