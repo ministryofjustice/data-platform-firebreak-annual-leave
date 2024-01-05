@@ -7,7 +7,7 @@ This repository is part of the Ministry of Justice's Data Platform Firebreak. Th
 
 The primary purpose of this project is to create an application which allows users to record Annual Leave.
 
-## Feature Requests ✨ 
+## Feature Requests ✨ 
 
 If you have an idea for a feauture please fill in a feature request [here](https://github.com/ministryofjustice/data-platform-firebreak-annual-leave/issues/new?assignees=&labels=enhancement&projects=&template=feature-request-template.yml&title=+%E2%9C%A8+%3Ctitle%3E).
 
@@ -25,7 +25,7 @@ To use the Dev Container, follow these steps:
 
 Additionally a `postgresql` container is created as part of the Dev Container build.
 
-### Credentials
+### Credentials
 
 Populate `config/credentials` with the following files: 
 - `development.key`
@@ -36,15 +36,15 @@ Additionally create a `master.key` in `config/credentials`.
 
 Keys can be located at `<TBC>`.
 
-### Test Driven Development 
+### Test Driven Development 
 
 This project follows [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) whenever it's possible to do so.
 
-### Linting
+### Linting
 
 This project uses [Super Linter](https://github.com/ministryofjustice/data-platform-firebreak-annual-leave/blob/main/.github/workflows/super-linter.yml) to improve our code quality. The Dev Container has both `rubocop` and `standard` pre-installed, the command `make auto-correct` calls these commands, this is detailed in the [Makefile](https://github.com/ministryofjustice/data-platform-firebreak-annual-leave/blob/main/Makefile). 
 
-### Use of the Makefile
+### Use of the Makefile
 
 To enhance the developer experience while working on this application, a [Makefile](https://github.com/ministryofjustice/data-platform-firebreak-annual-leave/blob/main/Makefile) is made available.
 
