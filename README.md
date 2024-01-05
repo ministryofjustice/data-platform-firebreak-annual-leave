@@ -9,7 +9,7 @@ The primary purpose of this project is to create an application which allows use
 
 ## Feature Requests ✨ 
 
-If you have an idea for a feauture please fill in a feature request [here](https://github.com/ministryofjustice/data-platform-firebreak-annual-leave/issues/new?assignees=&labels=enhancement&projects=&template=feature-request-template.yml&title=+%E2%9C%A8+%3Ctitle%3E).
+If you have an idea for a feature please fill in a feature request [here](https://github.com/ministryofjustice/data-platform-firebreak-annual-leave/issues/new?assignees=&labels=enhancement&projects=&template=feature-request-template.yml&title=+%E2%9C%A8+%3Ctitle%3E).
 
 ## Getting Started
 
